@@ -1,0 +1,9 @@
+.header{
+    /* border: 1px solid; */
+    height: 5vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--secondary);
+    font-size: 1em;
+    color: var(--primary);
+}
