@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Inputs from './Inputs';
 import List from './List';
+import '../Styles/MainContainer.css'
 
 const MainContainer = ({PagesLayout}) => {
     const [list, setList] = useState([]);

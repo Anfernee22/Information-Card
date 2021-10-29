@@ -1,6 +1,5 @@
 .header{
-    /* border: 1px solid; */
-    height: 5vh;
+    height: 7vh;
     display: grid;
     place-items: center;
     background-color: var(--secondary);

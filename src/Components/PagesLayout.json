@@ -3,5 +3,8 @@
     "enterInfo" : "Enter Your Information",
     "viewList" : "View List",
     "usersGreeting" : "Welcome",
-    "listHeader" : "Profiles"
+    "listHeader" : "Profiles",
+    "fnameLabel" : "Enter First Name",
+    "lnameLabel" : "Enter Last Name",
+    "ageLabel" : "Enter Age"
 }

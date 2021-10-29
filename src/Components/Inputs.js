@@ -1,14 +1,25 @@
 import '../Styles/Inputs.css'
 import { useState } from 'react';
-import List from './List'
+import List from './List';
+import PagesLayout from './PagesLayout.json'
+// import ShowMessage from './ShowMessage';
 
 const Inputs = ({img, setImg, fname, setFname, lname, setLname, age, setAge, bio, setBio, list, setList}) => {
     const [uploaded, setUploaded] = useState(false)
-    const [empty, setEmpty] = useState(true)
+    const [empty, setEmpty] = useState(false);
+    const [fnameLabel, setFnameLabel] = useState(PagesLayout.fnameLabel),
+            [lnameLabel, setLnameLabel] = useState(PagesLayout.lnameLabel),
+            [ageLabel, setAgeLabel] = useState(PagesLayout.ageLabel)
+    console.log(empty)
+    
     const submitHandler = (e) => {
         e.preventDefault()
         if(fname === '' || lname === '' || age === ''){
-            setEmpty(!empty)
+            setEmpty(true)
+            setFnameLabel('Enter a valid first name');
+            setLnameLabel('Enter a valid last name');
+            setAgeLabel('Enter a valid age')
+            
         }else{
             e.preventDefault()
             setList([...list, {firstName: fname, lastName: lname, age: age, bio: bio, img: img, id: Math.floor(Math.random() * 1000)}])
@@ -16,37 +27,46 @@ const Inputs = ({img, setImg, fname, setFname, lname, setLname, age, setAge, bio
             setLname('')
             setAge('')
             setBio('')
-
+            setEmpty(false)
+            setFnameLabel(PagesLayout.fnameLabel);
+            setLnameLabel(PagesLayout.lnameLabel);
+            setAgeLabel(PagesLayout.ageLabel)
         }
-        setTimeout(() => setEmpty(), 1000)
     }
+    
     const uploadImg = (e) => { 
         setUploaded(!uploaded)
-       if(e.target.files && e.target.files[0]){
+        if(e.target.files && e.target.files[0]){
             setImg(URL.createObjectURL(e.target.files[0]))
-       }
+        }
     }
 console.log(list)
     return(
         <div className="input-wrapper">
             <form className="forms">
                 <div className="input-fields">
-                    <input type="text" className="fname" value={fname} placeholder="Enter First Name" onChange={(e) => setFname(e.target.value)}/>
-                    {empty ? '' : <span className={fname === '' ? 'error' : 'disabled'}> Please enter first name</span>}
-                    <input type="text" className="lname" value={lname} placeholder="Enter Last Name" onChange={(e) => setLname(e.target.value)}/>
-                    {empty ? '' : <span className={lname === '' ? 'error' : 'disabled'}> Please enter last name</span>}
-                    <input type="number" value={age} name="age" placeholder="Enter Age" onChange={(e) => setAge(e.target.value)}/>
-                    {empty ? '' : <span className={age === '' ? 'error' : 'disabled'}> Please enter age</span>}
+                    <div className="input-box">
+                        <label htmlFor="fname" className={empty ? 'label-error' : 'input-label'}>{fnameLabel}</label>
+                        <input type="text" name="fname" className={empty ? 'input' : 'input-error'} value={fname} placeholder="First Name" onChange={(e) => setFname(e.target.value)}/>
+                    </div>
+                    <div className="input-box">
+                        <label htmlFor="fname" className={empty ? 'label-error' : 'input-label'}>{lnameLabel}</label>
+                        <input type="text" className={empty ? 'input' : 'input-error'} value={lname} placeholder="Last Name" onChange={(e) => setLname(e.target.value)}/>
+                    </div>
+                    <div className="input-box">
+                        <label htmlFor="fname" className={empty ? 'label-error' : 'input-label'}>{ageLabel}</label>
+                        <input type="number" className={empty ? 'input' : 'input-error'} value={age} name="age" placeholder="Age" onChange={(e) => setAge(e.target.value)}/>
+                    </div>
                 </div>
                 
                 <div className="info-container">
-                    <label htmlFor="file">{uploaded ? 'Photo uploaded' : 'Upload a photo'}</label>
+                    <label htmlFor="file" className="file">{uploaded ? 'Photo uploaded' : 'Upload a photo'}</label>
                     <input type="file" name="file" id="file" accept="image/*" onChange={uploadImg}/>
                     <textarea  className="textarea" spellCheck="true" value={bio} cols="30" rows="10" placeholder="Enter bio" onChange={(e) => setBio(e.target.value)}/>
                     <button className="submit-btn" onClick={submitHandler}>Submit</button>
                 </div>
             </form>
-            <List list={list} setList={setList}/>
+            {/* <List list={list} setList={setList}/> */}
         </div>
     )
 }
