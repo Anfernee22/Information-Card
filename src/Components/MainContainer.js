@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Inputs from './Inputs';
 import List from './List';
-import '../Styles/MainContainer.css'
+import '../Styles/MainContainer.css';
 
 const MainContainer = ({PagesLayout}) => {
     const [list, setList] = useState([]);
@@ -14,7 +14,7 @@ const MainContainer = ({PagesLayout}) => {
     return(
         <div className="main-container"> 
             <Inputs PagesLayout={PagesLayout} list={list} setList={setList} fname={fname} setFname={setFname} lname={lname} setLname={setLname} age={age} setAge={setAge} bio={bio} setBio={setBio} img={img} setImg={setImg}/>
-            <List img={img} list={list} setList={setList}/>
+            <List img={img} list={list} setList={setList} setImg={setImg}/>
         </div>
     )
 }

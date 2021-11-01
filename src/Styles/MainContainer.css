@@ -7,10 +7,17 @@
 
 @media (max-width: 768px){
     .main-container{
-        border: 1px solid red;
         flex-direction: column;
         height: 100%;
         gap: 1.5em;
         padding-block: 1.5em;
+        height: 100%;
+    }
+}
+
+@media (max-width: 375px){
+    .main-container{
+        height: 100%;
+        gap: 1em;
     }
 }
