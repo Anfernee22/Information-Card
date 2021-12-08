@@ -16,8 +16,8 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 1.2em;
-	height: 30vh;
+	gap: 1em; 
+	height: 32vh;
 	width: 100%;
 }
 .input-box {
@@ -26,7 +26,6 @@
 	gap: 0.4em;
 	width: 70%;
 }
-
 .input-label {
 	color: var(--tertiary);
 	font-weight: bold;
@@ -38,41 +37,39 @@
 .input-error {
 	box-shadow: 1px 1px 10px 1px #ff0000;
 	width: 100%;
-	padding: 0.5em 0.4em;
+	padding: 0.5rem 0.4rem;
 	border: inset;
 	outline: none;
 }
 .input {
 	width: 100%;
-	padding: 0.5em 0.4em;
+	padding: 0.5rem 0.4rem;
 	border: inset;
 	outline: none;
 }
-
 .info-container {
 	border: 1px solid var(--secondary);
-	border-radius: 0 9em 0 0;
+	border-radius: 0 9rem 0 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 0.8em;
+	gap: 0.8rem;
 	max-width: 100%;
-	padding: 1em 0;
+	padding: 1rem 0;
 	background-color: var(--primary);
 }
 .info-container label {
 	color: var(--secondary);
-	font-size: 1.4em;
+	font-size: 1.4rem;
 }
 #file {
-	padding: 0.5em;
-	font-size: 1em;
+	padding: 0.5rem;
+	font-size: 1rem;
 }
-
 .textarea {
-	padding: 0.5em;
-	font-size: 1.3em;
+	padding: 0.5rem;
+	font-size: 1rem;
 	width: 80%;
 	background-color: rgba(255, 255, 255, 0.438);
 	outline: none;
@@ -81,9 +78,9 @@
 	color: #fff;
 }
 .submit-btn {
-	padding: 0.5em;
+	padding: 0.5rem;
 	width: 40%;
-	font-size: 1em;
+	font-size: 1rem;
 	border-radius: 10px;
 	border: none;
 	background-color: var(--secondary);
@@ -97,8 +94,6 @@
 .disabled {
 	display: none;
 }
-
-
 @media (max-width: 768px) {
 	.input-wrapper {
 		width: 80%;
@@ -108,28 +103,28 @@
 		background-color: var(--lighterSecondary);
 	}
 	.input-fields {
-		gap: 0.4em;
+		gap: 0.4rem;
 		height: 15vh;
 	}
 	.input,
 	.input-error {
-		padding: 0.3em;
+		padding: 0.3rem;
 		border: none;
 		box-shadow: none;
 	}
 	::placeholder {
-		font-size: 0.8em;
+		font-size: 0.8rem;
 	}
 	.input-box {
 		gap: 0;
 	}
 	.input-label,
 	.label-error {
-		font-size: 0.8em;
+		font-size: 0.8rem;
 	}
 	.info-container {
-		gap: 0.3em;
-		padding: 0.7em 0;
+		gap: 0.3rem;
+		padding: 0.7rem 0;
 	}
 	.info-container label {
 		font-size: 1em;
@@ -144,8 +139,7 @@
 		font-size: 0.8em;
 	}
 }
-
-@media (max-width: 375px) {
+@media (max-width: 543px) {
 	.input-wrapper {
 		width: 80%;
 		box-shadow: 1px 1px 10px 3px var(--secondary);
@@ -182,7 +176,6 @@
 		color: var(--primary);
 		font-size: 1em;
 	}
-
 	.info-container {
 		gap: 0.3em;
 		padding: 0.7em 0;
@@ -197,7 +190,8 @@
 		font-size: 0.7em;
 	}
 	.submit-btn {
-		padding: 0.4em;
+		margin-top: .5em;
+		padding: 0.2em;
 		width: 20%;
 		font-size: 0.8em;
 	}

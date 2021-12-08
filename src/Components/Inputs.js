@@ -6,10 +6,8 @@ const Inputs = ({img, setImg, fname, setFname, lname, setLname, age, setAge, bio
     const [uploaded, setUploaded] = useState(false)
     const [empty, setEmpty] = useState(false);
     const [fnameLabel, setFnameLabel] = useState(PagesLayout.fnameLabel),
-            [lnameLabel, setLnameLabel] = useState(PagesLayout.lnameLabel),
-            [ageLabel, setAgeLabel] = useState(PagesLayout.ageLabel)
-    console.log(empty)
-    
+    [lnameLabel, setLnameLabel] = useState(PagesLayout.lnameLabel),
+    [ageLabel, setAgeLabel] = useState(PagesLayout.ageLabel)
     const submitHandler = (e) => {
         e.preventDefault()
         if(fname === '' || lname === '' || age === ''){
@@ -17,7 +15,6 @@ const Inputs = ({img, setImg, fname, setFname, lname, setLname, age, setAge, bio
             setFnameLabel('Enter a valid first name');
             setLnameLabel('Enter a valid last name');
             setAgeLabel('Enter a valid age')
-            
         }else{
             e.preventDefault() 
             setList([...list, {firstName: fname, lastName: lname, age: age, bio: bio, img: img, id: Math.floor(Math.random() * 1000)}])
@@ -31,7 +28,6 @@ const Inputs = ({img, setImg, fname, setFname, lname, setLname, age, setAge, bio
             setAgeLabel(PagesLayout.ageLabel)
         }
     }
-    
     const uploadImg = (e) => { 
         setUploaded(!uploaded)
         if(e.target.files && e.target.files[0]){
@@ -55,7 +51,6 @@ const Inputs = ({img, setImg, fname, setFname, lname, setLname, age, setAge, bio
                         <input type="number" className={empty ? 'input-error' : 'input'} value={age} name="age" placeholder="Age" onChange={(e) => setAge(e.target.value)}/>
                     </div>
                 </div>
-                
                 <div className="info-container">
                     <label htmlFor="file" className="file">{uploaded ? 'Photo uploaded' : 'Upload a photo'}</label>
                     <input type="file" name="file" id="file" accept="image/*" onChange={uploadImg}/>

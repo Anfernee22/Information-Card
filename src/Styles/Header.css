@@ -3,19 +3,18 @@
     display: grid;
     place-items: center;
     background-color: var(--secondary);
-    font-size: 1em;
+    font-size: 1rem;
     color: var(--primary);
 }
-
 @media (max-width: 768px){
     .header{
         height: 4vh;
-        font-size: .7em;
+        font-size: .7rem;
     }
 }
-@media (max-width: 375px){
+@media (max-width: 543px){
     .header{
-        height: 3vh;
+        height: 4vh;
         font-size: .5em;
     }
 }

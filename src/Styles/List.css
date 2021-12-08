@@ -7,7 +7,6 @@
 	height: 90%;
 	padding-inline: 2em;
 }
-
 .list-container {
 	display: flex;
 	flex-direction: column;
@@ -168,7 +167,6 @@
 		width: 90%;
 		font-size: 1em;
 	}
-
 	.profile {
 		flex-direction: column;
 	}
@@ -185,7 +183,7 @@
 		height: 40%;
 	}
 }
-@media (max-width: 375px) {
+@media (max-width: 543px) {
 	.list-wrapper {
 		width: 80%;
 		padding-inline: 0;

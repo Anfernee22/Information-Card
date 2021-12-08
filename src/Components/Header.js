@@ -6,7 +6,6 @@ const Header =({PagesLayout}) => {
             <h1>{PagesLayout.header}</h1>
         </div>
     ) 
-    
 }
 
 export default Header;

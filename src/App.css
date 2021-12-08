@@ -10,12 +10,10 @@
 	--lighterSecondary: #ff9a8d81;
 	--white: #fff;
 }
-
 .app-wrapper {
 	background-color: var(--primary);
 	height: 100vh;
 }
-
 @media (max-width: 768px){
 	.app-wrapper{
 		height: 100%;

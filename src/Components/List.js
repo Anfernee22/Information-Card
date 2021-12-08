@@ -27,7 +27,6 @@ const List = ({list, setList}) => {
         listWrapper.appendChild(window)
         closeWindow()
     }
-
     return(
         <div className="list-wrapper">
             <div className="list-container">

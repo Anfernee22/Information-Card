@@ -4,7 +4,6 @@
     align-items: center;
     height: 93vh;
 }
-
 @media (max-width: 768px){
     .main-container{
         flex-direction: column;
@@ -14,8 +13,7 @@
         height: 100%;
     }
 }
-
-@media (max-width: 375px){
+@media (max-width: 543px){
     .main-container{
         height: 100%;
         gap: 1em;
